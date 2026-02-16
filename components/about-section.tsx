@@ -135,7 +135,7 @@ export default function AboutSection() {
                 >
                   <div className="text-center">
                     <span className="block text-4xl font-bold text-blue-400">
-                      1.5
+                      2
                     </span>
                     <span className="text-slate-300 text-sm">
                       Years of Experience

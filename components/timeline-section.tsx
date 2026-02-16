@@ -45,6 +45,19 @@ export default function TimelineSection() {
         "Collaborated with cross-functional teams to align UI components with product goals and user expectations.",
       ],
     },
+    {
+      date: "2025-2026 (Present)",
+      title: "UI/UX Designer at Code Fulcrum",
+      description:
+        "As a UI/UX Designer at Code Fulcrum, I focused on creating user-centered designs for various digital products. My role involved conducting user research, creating wireframes and prototypes, and collaborating with developers to ensure a seamless implementation of designs.",
+      contributions: [
+        "Conducted user research to inform design decisions.",
+        "Created wireframes and prototypes for client projects.",
+        "Collaborated with developers to ensure design feasibility.",
+        "Participated in design critiques and provided constructive feedback.",
+        "Contributed to the evolution of the design system at Code Fulcrum.",
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -79,7 +92,7 @@ export default function TimelineSection() {
               end: "bottom 20%",
               scrub: 1,
             },
-          }
+          },
         );
       }
 
