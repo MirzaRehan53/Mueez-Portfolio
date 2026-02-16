@@ -27,11 +27,16 @@ export default function HeroSection() {
           </h1>
 
           <p className="md:text-xl sm:text-[18px] lg:text-3xl text-zinc-300 mb-4 font-medium leading-tight md:leading-relaxed">
-            I am a professional <span className="text-emerald-400 font-bold"> UI/UX designer</span> creating graphics and user interfaces for web and mobile applications.
+            I am a professional{" "}
+            <span className="text-emerald-400 font-bold"> UI/UX designer</span>{" "}
+            creating graphics and user interfaces for web and mobile
+            applications.
           </p>
 
           <span className="inline-block text-zinc-400 text-lg md:text-xl mb-2 mt-4 italic bg-zinc-800/50 px-4 py-2 rounded-lg border border-emerald-500/30">
-            Passionate about <span className="text-emerald-400">helping clients</span> achieve their goals through innovative design solutions.
+            Passionate about{" "}
+            <span className="text-emerald-400">helping clients</span> achieve
+            their goals through innovative design solutions.
           </span>
 
           <div className="flex flex-row justify-center items-center  flex-wrap gap-6 mt-8">

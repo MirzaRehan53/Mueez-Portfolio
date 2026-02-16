@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +30,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   const toggleMenu = () => {
-  setIsOpen((prev) => !prev);
+    setIsOpen((prev) => !prev);
   };
 
   const scrollToSection = (id) => {
@@ -70,7 +69,7 @@ export default function Navbar() {
           <span className="text-white">Mueez ur </span>Rehman
         </a>
 
-  <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8">
           {["home", "about", "skills", "projects", "contact"].map((item) => (
             <button
               key={item}
