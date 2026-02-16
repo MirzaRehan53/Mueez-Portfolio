@@ -20,16 +20,16 @@ export default function TimelineSection() {
 
   const timelineEvents: TimelineEvent[] = [
     {
-      date: "2023",
-      title: "Junior UI/UX Designer",
+      date: "2025-2026 (Present)",
+      title: "UI/UX Designer at Code Fulcrum / Contract",
       description:
-        "Started my career as a Junior UI/UX Designer at Beyond Kreatives l Lahore, focusing on creating user-centered designs and collaborating with cross-functional teams to deliver engaging digital experiences.",
+        "Hired on a contract basis to evaluate and resolve design challenges in an ongoing project. Analyzed user flows, identified bottlenecks, and redesigned key interfaces to enhance usability and functionality. Successfully transformed complex requirements into intuitive solutions, enabling smoother development progress and improved overall  product experience.",
       contributions: [
-        "Focused on creating user-centered designs at Beyond Kreatives.",
-        "Collaborated with cross-functional teams to deliver engaging digital experiences.",
-        "Worked on user research and usability testing to inform design decisions.",
-        "Created wireframes, prototypes, and high-fidelity mockups for client projects.",
-        "Participated in design critiques and contributed to the design system evolution.",
+        "Conducted user research to inform design decisions.",
+        "Created wireframes and prototypes for client projects.",
+        "Collaborated with developers to ensure design feasibility.",
+        "Participated in design critiques and provided constructive feedback.",
+        "Contributed to the evolution of the design system at Code Fulcrum.",
       ],
     },
     {
@@ -46,16 +46,16 @@ export default function TimelineSection() {
       ],
     },
     {
-      date: "2025-2026 (Present)",
-      title: "UI/UX Designer at Code Fulcrum",
+      date: "2023",
+      title: "Junior UI/UX Designer",
       description:
-        "As a UI/UX Designer at Code Fulcrum, I focused on creating user-centered designs for various digital products. My role involved conducting user research, creating wireframes and prototypes, and collaborating with developers to ensure a seamless implementation of designs.",
+        "Started my career as a Junior UI/UX Designer at Beyond Kreatives l Lahore, focusing on creating user-centered designs and collaborating with cross-functional teams to deliver engaging digital experiences.",
       contributions: [
-        "Conducted user research to inform design decisions.",
-        "Created wireframes and prototypes for client projects.",
-        "Collaborated with developers to ensure design feasibility.",
-        "Participated in design critiques and provided constructive feedback.",
-        "Contributed to the evolution of the design system at Code Fulcrum.",
+        "Focused on creating user-centered designs at Beyond Kreatives.",
+        "Collaborated with cross-functional teams to deliver engaging digital experiences.",
+        "Worked on user research and usability testing to inform design decisions.",
+        "Created wireframes, prototypes, and high-fidelity mockups for client projects.",
+        "Participated in design critiques and contributed to the design system evolution.",
       ],
     },
   ];

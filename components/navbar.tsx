@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,72 +22,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Add effect to control body scroll and backdrop when menu is open
+  // Control body scroll when menu is open (simple, no animations)
   useEffect(() => {
-    if (isOpen) {
-      // Prevent scrolling on the body when menu is open
-      document.body.style.overflow = "hidden";
-
-      // Create and append backdrop overlay
-      const backdrop = document.createElement("div");
-      backdrop.className = "fixed inset-0 bg-zinc-900 backdrop-blur-lg z-40";
-      backdrop.id = "mobile-menu-backdrop";
-      document.body.appendChild(backdrop);
-
-      // Close menu when backdrop is clicked
-      backdrop.addEventListener("click", () => {
-        toggleMenu();
-      });
-    } else {
-      // Re-enable scrolling when menu is closed
-      document.body.style.overflow = "";
-
-      // Remove backdrop
-      const backdrop = document.getElementById("mobile-menu-backdrop");
-      if (backdrop) {
-        backdrop.remove();
-      }
-    }
-
-    // Cleanup function
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
-      const backdrop = document.getElementById("mobile-menu-backdrop");
-      if (backdrop) backdrop.remove();
     };
   }, [isOpen]);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-
-    if (!isOpen) {
-      gsap.to(".mobile-menu", {
-        x: 0,
-        duration: 0.5,
-        ease: "power3.out",
-      });
-    } else {
-      gsap.to(".mobile-menu", {
-        x: "100%",
-        duration: 0.5,
-        ease: "power3.in",
-      });
-    }
+  setIsOpen((prev) => !prev);
   };
 
   const scrollToSection = (id) => {
     setIsOpen(false);
-    gsap.to(".mobile-menu", {
-      x: "100%",
-      duration: 0.5,
-      ease: "power3.in",
-    });
-
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: `#${id}`, offsetY: 80 },
-      ease: "power3.inOut",
-    });
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // adjust for fixed header offset if needed
+      window.scrollBy(0, -80);
+    }
   };
 
   const downloadResume = () => {
@@ -116,7 +70,7 @@ export default function Navbar() {
           <span className="text-white">Mueez ur </span>Rehman
         </a>
 
-        <nav className="hidden md:flex space-x-8">
+  <nav className="hidden md:flex space-x-8">
           {["home", "about", "skills", "projects", "contact"].map((item) => (
             <button
               key={item}
@@ -143,7 +97,21 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div className="mobile-menu fixed top-0 right-0 h-full w-4/5 bg-zinc-800 transform translate-x-full z-50 md:hidden shadow-xl">
+      {/* Render a React-managed backdrop instead of mutating the DOM directly.
+          Backdrop is only shown on mobile when `isOpen` is true. */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-zinc-900/60 z-40 md:hidden"
+          onClick={toggleMenu}
+          aria-hidden
+        />
+      )}
+
+      <div
+        className={`mobile-menu fixed top-0 right-0 h-full w-4/5 bg-zinc-800 z-50 md:hidden shadow-xl transform transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
         <div className="flex flex-col h-full bg-zinc-800 p-6">
           <div className="flex justify-end">
             <button onClick={toggleMenu} aria-label="Close menu">
